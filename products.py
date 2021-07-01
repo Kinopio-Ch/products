@@ -1,4 +1,13 @@
 products = []          #商品建立空清單
+with open('products.csv', 'r', encoding='utf-8') as f:        #讀取檔案 
+    for line in f:
+        if '商品,價格' in line:
+            continue    #跳到下一迴
+        name, price = line.strip().split(',')    #找逗點切開，逗點會不見
+        products.append([name, price])
+print(products)
+
+
 while True:
     name = input('請輸入商品名稱，離開請按q：')
     if name == 'q':     #離開迴圈(quit)
