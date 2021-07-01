@@ -16,7 +16,9 @@ products[0][0]          #存取products清單
 for p in products:      #用for迴圈存取
     print(p[0], '的價格是', p[1])         #印出product中子清單的第0個位置
 
-with open('product.txt','w') as f:      #開啟product.txt進寫入模式(若電腦有此檔會覆蓋，無此檔會建立)
+with open('product.csv','w', encoding='utf-8') as f:      #開啟product.csv進寫入模式(若電腦有此檔會覆蓋，無此檔會建立，csv檔可用excel開)
+                                                          #encoding='utf-8'解決編碼問題即可輸入中文
+    f.write('商品,價格\n')              #加入欄位
     for p in products:      #用for迴圈一個個存取
         f.write(p[0] + ',' + p[1] + '\n') #將資料寫入檔案，用+號合併字串，\n代表換行       
 
