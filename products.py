@@ -13,4 +13,7 @@ print(products)
 
 products[0][0]          #存取products清單  
 
+for p in products:      #用for迴圈存取
+    print(p[0], '的價格是', p[1])         #印出product中子清單的第0個位置
+
 
